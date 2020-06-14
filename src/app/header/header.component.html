@@ -59,7 +59,7 @@
             </div>
 
             <!-- Nav Start -->
-            <div class="classynav">
+            <!-- <div class="classynav">
               <ul>
                 <li *ngFor="let menu of menus"
                   [ngClass]="{'cn-dropdown-item': menu.child_module.length > 0, 'has-down': menu.child_module.length > 0}"
@@ -79,10 +79,47 @@
                   </ul>
                 </li>
               </ul>
-            </div>
+            </div> -->
             <!-- Nav End -->
+            <mat-toolbar color="primary">
+              <mat-toolbar-row>
+                  <div (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+                    <mat-icon class="classy-navbar-toggler">
+                      <span class="navbarToggler"><span>
+                      </span><span>
+                      </span><span>
+                      </span></span>
+                    </mat-icon>
+                  </div>
+                <div fxShow="true" fxHide.lt-md>
+                  <!-- For Desktop Menu -->
+                  <a href="#" mat-button>Menu Item 1</a>
+                  <a href="#" mat-button>Menu Item 2</a>
+                  <a href="#" mat-button>Menu Item 3</a>
+                  <a href="#" mat-button>Menu Item 4</a>
+                  <a href="#" mat-button>Menu Item 5</a>
+                  <a href="#" mat-button>Menu Item 6</a>
+                </div>
+              </mat-toolbar-row>
+            </mat-toolbar>
           </div>
         </nav>
+
+        <div style="height: 80vh;">
+          <mat-sidenav-container fxFlexFill>
+            <mat-sidenav #sidenav>
+              <mat-nav-list>
+                <a href="#" mat-list-item>Menu Item 1</a>
+                <a href="#" mat-list-item>Menu Item 2</a>
+                <a href="#" mat-list-item>Menu Item 3</a>
+                <a href="#" mat-list-item>Menu Item 4</a>
+                <a href="#" mat-list-item>Menu Item 5</a>
+                <a href="#"mat-list-item>Menu Item 6</a>
+              </mat-nav-list>
+            </mat-sidenav>
+          </mat-sidenav-container>
+        </div>
+
       </div>
     </div>
   </div>
